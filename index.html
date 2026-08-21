@@ -1,57 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Smart School Transport</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <header class="topbar">
-    <h1>Smart School Transports</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="buses.html">Buses</a>
-      <a href="routes.html">Routes</a>
-      <a href="attendance.html">Attendance</a>
-      <a href="notifications.html">Notifications</a>
-      <a href="parents.html">Parents</a>
-      <a href="admin.html">Admin</a>
-      <a href="about.html">About</a>c
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="hero">
-      <h2>Welcome to the Smart School Transport System</h2>
-      <p>A simple HTML and CSS prototype for managing school transport in Mombasa.</p>
-      <a class="btn" href="buses.html">View Bus Status</a>
-    </section>
-
-    <section class="cards">
-      <article class="card">
-        <h3>On Time</h3>
-        <p>8 buses are currently on schedule.</p>
-      </article>
-      <article class="card">
-        <h3>Delayed</h3>
-        <p>8 buses are running late due to traffic.</p>
-      </article>
-      <article class="card">
-        <h3>Arrived</h3>
-        <p>5 buses have already arrived at school.</p>
-      </article>
-    </section>
-
-    <section class="panel">
-      <h3>Latest Transport Update</h3>
-      <p>Parents can view bus arrival times and route changes through this simple website.</p>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2026 Smart School Transport Prototype</p>
-  </footer>
-</body>
-</html>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Dashboard | SmartRoute</title><link rel="stylesheet" href="styles.css"></head>
+<body data-page="dashboard"><div class="app-shell">
+	<aside class="sidebar"><div class="brand"><span class="brand-mark">S</span> SmartRoute</div><nav>
+		<div class="nav-label">Workspace</div><a class="nav-link active" data-page="dashboard" href="index.html"><span>▦</span> Dashboard</a><a class="nav-link" data-page="buses" href="buses.html"><span>◉</span> Bus tracking</a><a class="nav-link" data-page="attendance" href="attendance.html"><span>✓</span> Attendance</a><a class="nav-link" data-page="routes" href="routes.html"><span>⌁</span> Route management</a><a class="nav-link" data-page="notifications" href="notifications.html"><span>♢</span> Notifications</a>
+		<div class="nav-label">School</div><a class="nav-link" data-page="parents" href="parents.html"><span>◎</span> Parents</a><a class="nav-link" data-page="registration" href="registration.html"><span>+</span> Register student</a><a class="nav-link" data-page="admin" href="admin.html"><span>⚙</span> Settings</a>
+	</nav></aside>
+	<main class="content"><header class="topline"><div><p class="eyebrow">Friday, 21 August 2026</p><h1>Good morning, Admin.</h1></div><div class="top-actions"><div class="date-chip" data-today>Today</div><div class="avatar">AM</div></div></header>
+		<section class="stats"><article class="stat"><span class="stat-label">Active buses</span><div class="stat-value">12</div><span class="trend">↑ 2 from yesterday</span></article><article class="stat"><span class="stat-label">Students onboard</span><div class="stat-value">186</div><span class="trend">92% checked in</span></article><article class="stat"><span class="stat-label">Routes running</span><div class="stat-value">8</div><span class="trend">All morning routes</span></article><article class="stat"><span class="stat-label">Open alerts</span><div class="stat-value">3</div><span class="trend">Needs attention</span></article></section>
+		<div class="grid-2"><section class="panel"><div class="panel-head"><div><h2>Live fleet</h2><p class="panel-subtitle">Real-time vehicle activity</p></div><a class="btn secondary" href="buses.html">View fleet →</a></div><div class="map"><div class="pin one"><span>●</span></div><div class="pin two"><span>●</span></div><div class="pin three"><span>●</span></div></div></section>
+			<section class="panel"><div class="panel-head"><div><h2>Today's routes</h2><p class="panel-subtitle">Next departures</p></div><a class="btn secondary" href="routes.html">Manage</a></div><div class="route-list"><div class="route-item"><div class="route-icon">↗</div><div><strong>North Loop</strong><div class="route-meta">8 stops · ST-204</div></div><span class="status green">06:45</span></div><div class="route-item"><div class="route-icon">↗</div><div><strong>Coastline</strong><div class="route-meta">6 stops · ST-118</div></div><span class="status amber">06:55</span></div><div class="route-item"><div class="route-icon">↗</div><div><strong>West Hills</strong><div class="route-meta">7 stops · ST-307</div></div><span class="status green">07:05</span></div></div></section></div>
+		<section class="panel" style="margin-top:18px"><div class="panel-head"><div><h2>Recent activity</h2><p class="panel-subtitle">Latest updates from your transport network</p></div><button class="btn" data-action="toast" data-message="All activity is up to date">Refresh ↻</button></div><div class="table-wrap"><table><thead><tr><th>Update</th><th>Details</th><th>Time</th><th>Status</th></tr></thead><tbody><tr><td>Bus ST-204</td><td>Reached stop 4 on North Loop</td><td>2 min ago</td><td><span class="status green">On route</span></td></tr><tr><td>Attendance</td><td>Morning boarding records synced</td><td>12 min ago</td><td><span class="status green">Complete</span></td></tr><tr><td>Route alert</td><td>Coastline route traffic advisory</td><td>18 min ago</td><td><span class="status amber">Review</span></td></tr></tbody></table></div></section>
+	</main></div><script src="app.js"></script></body></html>

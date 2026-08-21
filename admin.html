@@ -3,6 +3,51 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Registrations | SmartRoute</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="admin">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">S</span> SmartRoute</div>
+      <nav>
+        <div class="nav-label">Workspace</div>
+        <a class="nav-link" data-page="dashboard" href="index.html"><span>▦</span> Dashboard</a>
+        <a class="nav-link" data-page="buses" href="buses.html"><span>◉</span> Bus tracking</a>
+        <a class="nav-link" data-page="attendance" href="attendance.html"><span>✓</span> Attendance</a>
+        <a class="nav-link" data-page="routes" href="routes.html"><span>⌁</span> Route management</a>
+        <div class="nav-label">School</div>
+        <a class="nav-link" data-page="registration" href="registration.html"><span>+</span> Student registration</a>
+        <a class="nav-link active" data-page="admin" href="admin.html"><span>⚙</span> Registrations</a>
+      </nav>
+    </aside>
+    <main class="content">
+      <header class="topline">
+        <div><p class="eyebrow">Admin / Admissions</p><h1>Student registrations.</h1></div>
+        <div class="top-actions"><div class="date-chip" data-today>Today</div><div class="avatar">AM</div></div>
+      </header>
+      <section class="stats"><article class="stat"><span class="stat-label">Total registrations</span><div class="stat-value" id="registrationCount">0</div><span class="trend">All submitted requests</span></article><article class="stat"><span class="stat-label">Pending review</span><div class="stat-value" id="pendingCount">0</div><span class="trend">Requires a decision</span></article></section>
+      <section class="panel">
+        <div class="panel-head"><div><h2>Collected student data</h2><p class="panel-subtitle">Requests submitted from the family registration form.</p></div><a class="btn secondary" href="registration.html">New registration <span>+</span></a></div>
+        <div class="table-wrap"><table><thead><tr><th>Student</th><th>Guardian</th><th>Contact</th><th>Route</th><th>Submitted</th><th>Status</th></tr></thead><tbody id="registrationRows"></tbody></table></div>
+      </section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+  <script>
+    const registrationRows = document.querySelector('#registrationRows');
+    const registrations = store.get('students');
+    document.querySelector('#registrationCount').textContent = registrations.length;
+    document.querySelector('#pendingCount').textContent = registrations.filter(registration => registration.status === 'Pending review').length;
+    registrationRows.innerHTML = registrations.length ? registrations.map(registration => `<tr><td><strong>${registration.studentName}</strong><br><small>${registration.grade} · ${registration.school}</small></td><td>${registration.guardianName}</td><td>${registration.phone}<br><small>${registration.email}</small></td><td>${registration.route}<br><small>${registration.address}</small></td><td>${new Intl.DateTimeFormat('en', { day: 'numeric', month: 'short', year: 'numeric' }).format(new Date(registration.submittedAt))}</td><td><span class="status amber">${registration.status}</span></td></tr>`).join('') : '<tr><td colspan="6"><div class="empty">No student registrations yet. Submitted forms will appear here.</div></td></tr>';
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin - Smart School Transport</title>
   <link rel="stylesheet" href="styles.css" />
 </head>

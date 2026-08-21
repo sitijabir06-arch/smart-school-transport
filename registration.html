@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Registration | SmartRoute</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="registration">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">S</span> SmartRoute</div>
+      <nav>
+        <div class="nav-label">Family portal</div>
+        <a class="nav-link active" data-page="registration" href="registration.html"><span>+</span> Student registration</a>
+        <a class="nav-link" data-page="parents" href="parents.html"><span>◎</span> Parent portal</a>
+        <div class="nav-label">School</div>
+        <a class="nav-link" data-page="admin" href="admin.html"><span>⚙</span> Admin registrations</a>
+      </nav>
+    </aside>
+    <main class="content">
+      <header class="topline">
+        <div><p class="eyebrow">Family portal / New student</p><h1>Register for school transport.</h1></div>
+        <div class="top-actions"><div class="date-chip" data-today>Today</div><div class="avatar">ST</div></div>
+      </header>
+      <div class="grid-2">
+        <section class="panel">
+          <div class="panel-head"><div><h2>Student details</h2><p class="panel-subtitle">Tell the school who needs a seat.</p></div></div>
+          <form id="registrationForm" class="form-grid">
+            <label>Student's full name<input name="studentName" required placeholder="e.g. Amina Jabir" /></label>
+            <label>Grade or class<input name="grade" required placeholder="e.g. Grade 5" /></label>
+            <label>School<input name="school" required placeholder="e.g. Smart School" /></label>
+            <label>Preferred route<select name="route" required><option value="">Select a route</option><option>North Loop</option><option>Coastline</option><option>West Hills</option></select></label>
+            <label>Parent or guardian name<input name="guardianName" required placeholder="Full name" /></label>
+            <label>Phone number<input name="phone" type="tel" required placeholder="+254 700 000 000" /></label>
+            <label>Email address<input name="email" type="email" required placeholder="name@example.com" /></label>
+            <label class="full">Pickup address<textarea name="address" required placeholder="House number, street, and area"></textarea></label>
+            <div class="full"><button class="btn" type="submit">Submit registration <span>→</span></button></div>
+          </form>
+        </section>
+        <section class="panel registration-note">
+          <div class="bus-scene" aria-hidden="true"><div class="sun"></div><div class="route-line"></div><div class="smart-bus"><span class="bus-roof"></span><span class="bus-window window-one"></span><span class="bus-window window-two"></span><span class="bus-window window-three"></span><span class="bus-light"></span><span class="bus-wheel wheel-one"></span><span class="bus-wheel wheel-two"></span></div></div>
+          <span class="route-icon">✓</span>
+          <h2>What happens next?</h2>
+          <p>Our transport team will check the route, confirm availability, and contact the parent or guardian using the details provided.</p>
+          <div class="route-item"><div class="route-icon">1</div><div><strong>Submit details</strong><div class="route-meta">Complete one form for each student.</div></div></div>
+          <div class="route-item"><div class="route-icon">2</div><div><strong>School review</strong><div class="route-meta">Your request is marked pending for the admin team.</div></div></div>
+          <div class="route-item"><div class="route-icon">3</div><div><strong>Route confirmation</strong><div class="route-meta">The school follows up with the family.</div></div></div>
+        </section>
+      </div>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
